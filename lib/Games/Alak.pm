@@ -1,10 +1,10 @@
 #!/usr/bin/perl
 require 5;
-# Time-stamp: "2000-07-08 22:15:03 MDT"
+# Time-stamp: "2004-12-29 19:42:11 AST"
 package Games::Alak;
 use strict;
 use vars qw($Tree $Term $Max_depth $VERSION);
-$VERSION = '0.14';
+$VERSION = '0.15';
 # BEGIN {$^W = 1}; # warnings on
 
 use constant BOARD_SIZE => 11;
