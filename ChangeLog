@@ -1,9 +1,12 @@
 Revision history for Perl module/program Games::Alak
-                                        Time-stamp: "2004-12-29 19:42:03 AST"
+
+2006-02-28  Avi Finkel  avi@finkel.org
+
+	* Release 0.16 -- Updating with new authorship information
 
 2004-12-29  Sean M. Burke  sburke@cpan.org
 
-        * Release 0.15 -- just rebundling; no code changes
+	* Release 0.15 -- just rebundling; no code changes
 	
 2000-07-08  Sean M. Burke  sburke@cpan.org
 

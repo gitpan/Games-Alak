@@ -1,10 +1,9 @@
 #!/usr/bin/perl
 require 5;
-# Time-stamp: "2004-12-29 19:42:11 AST"
 package Games::Alak;
 use strict;
 use vars qw($Tree $Term $Max_depth $VERSION);
-$VERSION = '0.15';
+$VERSION = '0.16';
 # BEGIN {$^W = 1}; # warnings on
 
 use constant BOARD_SIZE => 11;
@@ -476,14 +475,14 @@ with a Two-Dimensional World.>  Poseidon Press, New York.
 
 =head1 COPYRIGHT
 
-Copyright (c) 2000 Sean M. Burke.  All rights reserved.
+Copyright (c) 2000-2006 Sean M. Burke.  All rights reserved.
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =head1 AUTHOR
 
-Sean M. Burke, sburke@cpan.org
+Current maintainer Avi Finkel, C<avi@finkel.org>; Original author Sean M. Burke, C<sburke@cpan.org>
 
 Thanks to A. K. Dewdney (C<http://www.dewdney.com/>) for his
 encouragement in writing my (abovementioned) TPJ article, as well as
