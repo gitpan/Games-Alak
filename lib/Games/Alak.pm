@@ -3,7 +3,7 @@ require 5;
 package Games::Alak;
 use strict;
 use vars qw($Tree $Term $Max_depth $VERSION);
-$VERSION = '0.16';
+$VERSION = '0.17';
 # BEGIN {$^W = 1}; # warnings on
 
 use constant BOARD_SIZE => 11;
@@ -19,7 +19,7 @@ sub play {
   my($x_best_move, @o_move_chosen, $from, $to);
   
   $Max_depth = 3; # must be an integer > 0
-  $Tree = new_node(NEW_BOARD_STRING, 'x', -1,-10,0);
+  $Tree = _new_node(NEW_BOARD_STRING, 'x', -1,-10,0);
   
   use Term::ReadLine;
   $Term = Term::ReadLine->new('Alak');
@@ -104,7 +104,7 @@ sub prompt_for_next_move { # prompting
       grow($Tree);
       print "Tree grown.\n";
     } elsif($line eq 'reset') {
-      $Tree = new_node(NEW_BOARD_STRING, 'o', -1,-1,0,0);
+      $Tree = _new_node(NEW_BOARD_STRING, 'o', -1,-1,0,0);
       grow($Tree);
       print "Board reset to ", NEW_BOARD_STRING, "\nYour move.\n";
     } elsif($line =~ m/^reset\s+([.ox]+)/s) {
@@ -119,7 +119,7 @@ sub prompt_for_next_move { # prompting
       } elsif(($board =~ tr/o//) < 2) {
         print "But there's fewer than two o's in board $board\n";
       } else {
-        $Tree = new_node($board, 'o',-1,-1,0,0);
+        $Tree = _new_node($board, 'o',-1,-1,0,0);
         grow($Tree);
         print "Board reset to $board\nYour move.\n";
       }
@@ -158,7 +158,7 @@ sub prompt_for_next_move { # prompting
   
 #--------------------------------------------------------------------------
 
-sub new_node {
+sub _new_node {
   return
     {
      'board'          => $_[0],
@@ -344,7 +344,7 @@ sub figure_successors {  # ...of a given node
          # harming X is a /negative/ payoff
 
       push @$successors,
-        new_node(
+        _new_node(
           $new_board,
           $other, # it's other guy's turn now
           $i,
