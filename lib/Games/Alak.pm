@@ -3,7 +3,7 @@ require 5;
 package Games::Alak;
 use strict;
 use vars qw($Tree $Term $Max_depth $VERSION);
-$VERSION = '0.17';
+$VERSION = '0.18';
 # BEGIN {$^W = 1}; # warnings on
 
 use constant BOARD_SIZE => 11;
