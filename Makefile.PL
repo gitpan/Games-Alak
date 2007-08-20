@@ -1,18 +1,13 @@
-# This -*-perl-*- script writes the Makefile for installing this distribution.
-#
-# See "perldoc perlmodinstall" or "perldoc ExtUtils::MakeMaker" for
-# info on how to control how the installation goes.
-#
+use inc::Module::Install;
 
-require 5.004;
-use strict;
-use ExtUtils::MakeMaker;
+name 'Games-Alak';
+all_from 'lib/Games/Alak.pm';
 
-WriteMakefile(
-   'NAME'       => 'Games::Alak',
-   'VERSION_FROM' => 'lib/Games/Alak.pm', # finds $VERSION
-   'dist'        => { COMPRESS => 'gzip -6f', SUFFIX => 'gz', },
-   'PREREQ_PM'    => {  
-                         'Term::ReadLine' => 0, # any version, I guess.
-                     },
-);
+requires('Term::ReadLine');
+
+build_requires('Test::Pod' => 1.26);
+build_requires('Test::Pod::Coverage' => 1.08);
+build_requires('Pod::Coverage' => 0.18);
+
+auto_install;
+WriteAll;

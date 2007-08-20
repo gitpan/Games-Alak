@@ -1,5 +1,9 @@
 Revision history for Perl module/program Games::Alak
 
+2007-08-19  Avi Finkel  avi@finkel.org
+
+	* Release 0.19 -- Fixing how the makefile generates dependency info
+
 2006-08-27  Avi Finkel  avi@finkel.org
 
 	* Release 0.18 -- Bumping version number because some tools seem
